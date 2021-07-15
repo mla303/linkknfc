@@ -4,6 +4,7 @@ import 'package:linkknfc/widgets/widgets.dart';
 
 import 'activate_link.dart';
 import 'edit_personal.dart';
+import 'home_personal.dart';
 import 'splashscreen_onetime.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -15,7 +16,7 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 2)).then((value) {
-      Get.to(EditPersonal());
+      Get.to(ViewPersonal());
     });
     super.initState();
   }
