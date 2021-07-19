@@ -20,7 +20,7 @@ class ProfileWidget extends StatelessWidget {
       child: Stack(
         children: [
           buildImage(),
-          Positioned(bottom: 0, right: 10, child: buildEditIcon(color))
+          // Positioned(bottom: 0, right: 10, child: buildEditIcon(color))
         ],
       ),
     );
@@ -35,28 +35,28 @@ class ProfileWidget extends StatelessWidget {
         child: Ink.image(
             image: image,
             fit: BoxFit.cover,
-            width: 148,
-            height: 148,
+            width: 138,
+            height: 138,
             child: InkWell(
               onTap: onClicked,
             )),
       ),
     );
   }
-
-  Widget buildEditIcon(Color color) => buildCircle(
-        color: Colors.white,
-        all: 4,
-        child: buildCircle(
-          color: color,
-          all: 8,
-          child: Icon(
-            isEdit ? Icons.add_a_photo_outlined : Icons.edit,
-            color: Colors.white,
-            size: 20,
-          ),
-        ),
-      );
+  //
+  // Widget buildEditIcon(Color color) => buildCircle(
+  //       color: Colors.white,
+  //       all: 4,
+  //       child: buildCircle(
+  //         color: color,
+  //         all: 8,
+  //         child: Icon(
+  //           isEdit ? Icons.add_a_photo_outlined : Icons.edit,
+  //           color: Colors.white,
+  //           size: 20,
+  //         ),
+  //       ),
+  //     );
 
   Widget buildCircle({
     required Widget child,

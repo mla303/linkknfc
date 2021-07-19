@@ -8,20 +8,19 @@ import 'package:linkknfc/widgets/drawer.dart';
 
 
 enum Widgets {
-  personal,
-  business,
-  directs,
+  saveContact,
+  shareContact,
 }
 
-class ViewPersonal extends StatefulWidget {
+class PreviewProfile extends StatefulWidget {
   @override
-  _ViewPersonalState createState() => _ViewPersonalState();
+  _PreviewProfileState createState() => _PreviewProfileState();
 }
 
-class _ViewPersonalState extends State<ViewPersonal> {
+class _PreviewProfileState extends State<PreviewProfile> {
 
   bool closeTopContainer = false;
-  Widgets selectedWidget = Widgets.personal;
+  Widgets selectedWidget = Widgets.saveContact;
   List<Widget> itemsData = [];
   double topContainer = 0;
   ScrollController controller = ScrollController();
@@ -135,13 +134,13 @@ class _ViewPersonalState extends State<ViewPersonal> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              //personal button
+              //Save Contact button
               new GestureDetector(
                   onTap: () {
                     setState(() {
-                      selectedWidget = Widgets.personal;
+                      selectedWidget = Widgets.saveContact;
                     });
-                    Get.snackbar("Selected", "Personal");
+                    Get.snackbar("Selected", "Save Contact");
                   },
                   child: new Container(
                     width: Get.width/3.5,
@@ -154,13 +153,13 @@ class _ViewPersonalState extends State<ViewPersonal> {
 //                        color: Colors.green
 
                         color: selectedWidget ==
-                            Widgets.personal
+                            Widgets.saveContact
                             ? Colors.blue
                             : Colors.white),
 
                     child: Center(
-                      child: Text("Personal",style: TextStyle(
-                          color:  selectedWidget == Widgets.personal
+                      child: Text("Save Contact",style: TextStyle(
+                          color:  selectedWidget == Widgets.saveContact
                               ? Colors.white
                               : Colors.black54,
                           fontSize: 12
@@ -169,13 +168,13 @@ class _ViewPersonalState extends State<ViewPersonal> {
                   )),
               const SizedBox(width: 10),
 
-              //business button
+              //Share Contact button
               new GestureDetector(
                   onTap: () {
                     setState(() {
-                      selectedWidget = Widgets.business;
+                      selectedWidget = Widgets.shareContact;
                     });
-                    Get.snackbar("Selected", "business");
+                    Get.snackbar("Selected", "Share Contact");
                   },
                   child: new Container(
                     width: Get.width/3.5,
@@ -188,13 +187,13 @@ class _ViewPersonalState extends State<ViewPersonal> {
 //                        color: Colors.green
 
                         color: selectedWidget ==
-                            Widgets.business
+                            Widgets.shareContact
                             ? Colors.blue
                             : Colors.white),
 
                     child: Center(
-                      child: Text("Business",style: TextStyle(
-                          color:  selectedWidget == Widgets.business
+                      child: Text("Share Contact",style: TextStyle(
+                          color:  selectedWidget == Widgets.shareContact
                               ? Colors.white
                               : Colors.black54,
                           fontSize: 12
@@ -202,39 +201,6 @@ class _ViewPersonalState extends State<ViewPersonal> {
                     ),
                   )),
               const SizedBox(width: 10),
-
-              //direct button
-              new GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      selectedWidget = Widgets.directs;
-                    });
-                    Get.snackbar("Selected", "direct");
-                  },
-                  child: new Container(
-                    width: Get.width/3.5,
-                    height: Get.height/20,
-
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(8)
-                        ),
-                        shape: BoxShape.rectangle,
-//                        color: Colors.green
-
-                        color: selectedWidget ==
-                            Widgets.directs
-                            ? Colors.blue
-                            : Colors.white),
-
-                    child: Center(
-                      child: Text("Direct",style: TextStyle(
-                          color:  selectedWidget == Widgets.directs
-                              ? Colors.white
-                              : Colors.black54,
-                          fontSize: 12
-                      ),),
-                    ),
-                  )),
             ],
           ),
           const SizedBox(height: 16),
@@ -275,20 +241,20 @@ class _ViewPersonalState extends State<ViewPersonal> {
 
   Widget buildName(User user) => Column(
     crossAxisAlignment: CrossAxisAlignment.start,
-        
-        children: [
-          Text(
-            user.name,
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-          ),
-          const SizedBox(height: 10),
-          Container(
-            width: Get.width/2,
-            child: Text(
-              user.bio,
-              style: TextStyle(color: Colors.grey.shade800, fontSize: 12),
-            ),
-          ),
-        ],
-      );
+
+    children: [
+      Text(
+        user.name,
+        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+      ),
+      const SizedBox(height: 10),
+      Container(
+        width: Get.width/2,
+        child: Text(
+          user.bio,
+          style: TextStyle(color: Colors.grey.shade800, fontSize: 12),
+        ),
+      ),
+    ],
+  );
 }

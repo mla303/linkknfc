@@ -34,6 +34,7 @@ class ButtonWidgetOutline extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => OutlinedButton(
+
         style: OutlinedButton.styleFrom(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
         ),

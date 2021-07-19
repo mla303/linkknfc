@@ -82,7 +82,7 @@ Get.to(ActivateLink());
               Divider(),
               ListTile(
                 onTap: () {
-                  Get.to(ActivateLink());
+                  // Get.to(ActivateLink());
                 },
                 leading: Icon(Icons.logout,color: Colors.black,),
                 title: Text(
